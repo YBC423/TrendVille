@@ -8,14 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; }
- .text-gray { color: #6B7280; }
- .page { display: none; }
- .page.active { display: block; }
+   .text-gray { color: #6B7280; }
+   .page { display: none; }
+   .page.active { display: block; }
+    /* Prevent slider jump */
+   .slider-container { aspect-ratio: 2 / 1; }
   </style>
 </head>
 <body class="bg-white">
 
-  <!-- HEADER - CHANGES -->
+  <!-- HEADER -->
   <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-[#E5E7EB] px-4 py-3">
     <!-- Search Bar Default -->
     <div id="search-header" class="relative">
@@ -32,11 +34,45 @@
 
   <!-- PAGES -->
   <main>
-    <div id="home" class="page active min-h-[60vh] px-4 py-6"></div>
-    <div id="categories" class="page min-h-[60vh] px-4 py-6"></div>
-    <div id="cart" class="page min-h-[60vh] px-4 py-6"></div>
-    <div id="wishlist" class="page min-h-[60vh] px-4 py-6"></div>
-    <div id="account" class="page min-h-[60vh] px-4 py-6"></div>
+    <!-- HOME PAGE WITH JUMIA BANNERS -->
+    <div id="home" class="page active">
+      
+      <!-- BANNER SLIDER - JUMIA STYLE -->
+      <div class="relative w-full max-w-[1200px] mx-auto">
+        <div class="relative w-full slider-container overflow-hidden">
+          
+          <!-- Slides -->
+          <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
+            <a href="/category/handbags" class="min-w-full h-full"><img src="/images/bana1.JPEG" class="w-full h-full object-cover" alt="Handbags & Wallets"></a>
+            <a href="/brand-festival" class="min-w-full h-full"><img src="/images/bana2.JPEG" class="w-full h-full object-cover" alt="Brand Festival"></a>
+            <a href="/category/computers" class="min-w-full h-full"><img src="/images/bana3.JPEG" class="w-full h-full object-cover" alt="Computers & Gaming"></a>
+            <a href="/category/fashion" class="min-w-full h-full"><img src="/images/bana4.JPEG" class="w-full h-full object-cover" alt="Fashion For Everyone"></a>
+            <a href="/category/beauty" class="min-w-full h-full"><img src="/images/bana5.JPEG" class="w-full h-full object-cover" alt="Beauty & Glam"></a>
+            <a href="/category/jewelry" class="min-w-full h-full"><img src="/images/bana6.JPEG" class="w-full h-full object-cover" alt="Jewelry Collection"></a>
+            <a href="/category/trendville-old" class="min-w-full h-full"><img src="/images/bana7.JPEG" class="w-full h-full object-cover" alt="TrendVille"></a>
+            <a href="/" class="min-w-full h-full"><img src="/images/bana8.JPEG" class="w-full h-full object-cover" alt="TrendVille Pro"></a>
+          </div>
+
+          <!-- Arrows -->
+          <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block">❮</button>
+          <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block">❯</button>
+
+          <!-- Dots -->
+          <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+        </div>
+      </div>
+
+      <!-- You can add Flash Sales, Categories here below the slider like Jumia -->
+      <div class="px-4 py-6">
+        <h2 class="text-lg font-bold mb-4">Welcome to TrendVille</h2>
+      </div>
+
+    </div>
+
+    <div id="categories" class="page min-h-[60vh] px-4 py-6">Categories Page</div>
+    <div id="cart" class="page min-h-[60vh] px-4 py-6">Cart Page</div>
+    <div id="wishlist" class="page min-h-[60vh] px-4 py-6">Wishlist Page</div>
+    <div id="account" class="page min-h-[60vh] px-4 py-6">Account Page</div>
   </main>
 
   <!-- BOTTOM NAV -->
@@ -51,6 +87,7 @@
   </nav>
 
   <script>
+    // PAGE NAVIGATION
     function showPage(pageId) {
       localStorage.setItem('activePage', pageId);
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -78,7 +115,55 @@
     document.addEventListener('DOMContentLoaded', function() {
       const lastPage = localStorage.getItem('activePage') || 'home';
       showPage(lastPage);
+      initSlider(); // Start slider only on home
     });
+
+    // SLIDER SCRIPT - JUMIA STYLE
+    function initSlider(){
+      const slider = document.getElementById('slider');
+      if(!slider) return;
+      const slides = slider.children.length;
+      const dotsContainer = document.getElementById('dots');
+      let index = 0;
+      let autoSlide;
+
+      // Create dots
+      for(let i=0; i<slides; i++){
+        const dot = document.createElement('button');
+        dot.className = 'w-2 h-2 rounded-full bg-white/60 transition-all';
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.children;
+
+      function updateSlider(){
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        [...dots].forEach((d,i)=> d.className = `w-2 h-2 rounded-full transition-all ${i===index? 'bg-white w-5' : 'bg-white/60'}`);
+      }
+
+      function goToSlide(i){
+        index = i;
+        updateSlider();
+        resetAutoSlide();
+      }
+
+      document.getElementById('next').onclick = () => { index = (index + 1) % slides; updateSlider(); resetAutoSlide(); }
+      document.getElementById('prev').onclick = () => { index = (index - 1 + slides) % slides; updateSlider(); resetAutoSlide(); }
+
+      function autoPlay(){ autoSlide = setInterval(()=>{ index = (index + 1) % slides; updateSlider(); }, 4000); }
+      function resetAutoSlide(){ clearInterval(autoSlide); autoPlay(); }
+
+      // Mobile swipe
+      let startX = 0;
+      slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+      slider.addEventListener('touchend', e => {
+        if(e.changedTouches[0].clientX < startX - 50) document.getElementById('next').click();
+        if(e.changedTouches[0].clientX > startX + 50) document.getElementById('prev').click();
+      });
+
+      updateSlider();
+      autoPlay();
+    }
   </script>
 </body>
 </html>
