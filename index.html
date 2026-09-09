@@ -8,122 +8,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; }
-  .text-gray { color: #6B7280; }
-  .bg-section { background-color: #F8F9FA; }
-  .btn-orange { background-color: #FF5A1F; }
-  .btn-orange:hover { background-color: #E54E18; }
-  .page { display: none; }
-  .page.active { display: block; }
+ .text-gray { color: #6B7280; }
+ .page { display: none; }
+ .page.active { display: block; }
   </style>
 </head>
 <body class="bg-white">
 
-  <!-- HEADER - SAME FOR ALL 5 PAGES NOW -->
+  <!-- HEADER - CHANGES -->
   <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-[#E5E7EB] px-4 py-3">
-    <!-- Search Bar For All Pages -->
-    <div class="relative">
+    <!-- Search Bar Default -->
+    <div id="search-header" class="relative">
       <svg class="absolute left-3 top-3 w-5 h-5 text-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
       </svg>
       <input type="text" placeholder="Search on TrendVille" class="w-full pl-10 pr-4 py-2.5 bg-[#F8F9FA] rounded-lg text-sm border-none focus:outline-none">
     </div>
+    <!-- Cart Title -->
+    <div id="cart-header" class="hidden">
+      <h1 class="text-xl font-bold">Cart</h1>
+    </div>
   </header>
 
   <!-- PAGES -->
   <main>
-    <!-- 1. HOME PAGE -->
-    <div id="home" class="page active min-h-[60vh] px-4 py-6">
-      <!-- Blank for now -->
-    </div>
-
-    <!-- 2. CATEGORIES PAGE -->
-    <div id="categories" class="page min-h-[60vh] px-4 py-6">
-      <!-- Blank for now -->
-    </div>
-
-    <!-- 3. CART PAGE -->
-    <div id="cart" class="page min-h-[60vh] px-4 py-6">
-      <!-- Blank for now -->
-    </div>
-
-    <!-- 4. WISHLIST PAGE -->
-    <div id="wishlist" class="page min-h-[60vh] px-4 py-6">
-      <!-- Blank for now -->
-    </div>
-
-    <!-- 5. ACCOUNT PAGE -->
-    <div id="account" class="page min-h-[60vh] px-4 py-6">
-      <!-- Blank for now -->
-    </div>
+    <div id="home" class="page active min-h-[60vh] px-4 py-6"></div>
+    <div id="categories" class="page min-h-[60vh] px-4 py-6"></div>
+    <div id="cart" class="page min-h-[60vh] px-4 py-6"></div>
+    <div id="wishlist" class="page min-h-[60vh] px-4 py-6"></div>
+    <div id="account" class="page min-h-[60vh] px-4 py-6"></div>
   </main>
 
-  <!-- BOTTOM NAVIGATION - LIKE JUMIA -->
+  <!-- BOTTOM NAV -->
   <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E7EB] z-50">
     <div class="flex justify-around items-center h-16">
-      <!-- Home -->
-      <button onclick="showPage('home')" id="nav-home" class="flex flex-col items-center text-[#FF5A1F]">
-        <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-        <span class="text-xs font-semibold">Home</span>
-      </button>
-      <!-- Categories -->
-      <button onclick="showPage('categories')" id="nav-categories" class="flex flex-col items-center text-gray">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
-        <span class="text-xs font-medium">Categories</span>
-      </button>
-      <!-- Cart -->
-      <button onclick="showPage('cart')" id="nav-cart" class="flex flex-col items-center text-gray">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-        <span class="text-xs font-medium">Cart</span>
-      </button>
-      <!-- Wishlist -->
-      <button onclick="showPage('wishlist')" id="nav-wishlist" class="flex flex-col items-center text-gray">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-        <span class="text-xs font-medium">Wishlist</span>
-      </button>
-      <!-- Account -->
-      <button onclick="showPage('account')" id="nav-account" class="flex flex-col items-center text-gray">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-        <span class="text-xs font-medium">Account</span>
-      </button>
+      <button onclick="showPage('home')" id="nav-home" class="flex flex-col items-center text-[#FF5A1F]"><svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg><span class="text-xs font-semibold">Home</span></button>
+      <button onclick="showPage('categories')" id="nav-categories" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg><span class="text-xs font-medium">Categories</span></button>
+      <button onclick="showPage('cart')" id="nav-cart" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg><span class="text-xs font-medium">Cart</span></button>
+      <button onclick="showPage('wishlist')" id="nav-wishlist" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg><span class="text-xs font-medium">Wishlist</span></button>
+      <button onclick="showPage('account')" id="nav-account" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="text-xs font-medium">Account</span></button>
     </div>
   </nav>
 
   <script>
     function showPage(pageId) {
-      // Save current page to localStorage
       localStorage.setItem('activePage', pageId);
-
-      // Hide all pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      // Show selected page
       document.getElementById(pageId).classList.add('active');
 
-      // Reset nav colors
       document.querySelectorAll('nav button').forEach(btn => {
-        btn.classList.remove('text-[#FF5A1F]');
-        btn.classList.add('text-gray');
-        btn.querySelector('span').classList.remove('font-semibold');
-        btn.querySelector('span').classList.add('font-medium');
-        btn.querySelector('svg').setAttribute('fill', 'none');
-        btn.querySelector('svg').setAttribute('stroke', 'currentColor');
+        btn.classList.remove('text-[#FF5A1F]'); btn.classList.add('text-gray');
+        btn.querySelector('span').classList.remove('font-semibold'); btn.querySelector('span').classList.add('font-medium');
+        btn.querySelector('svg').setAttribute('fill', 'none'); btn.querySelector('svg').setAttribute('stroke', 'currentColor');
       });
-
-      // Set active nav color
       const activeNav = document.getElementById('nav-' + pageId);
-      activeNav.classList.remove('text-gray');
-      activeNav.classList.add('text-[#FF5A1F]');
-      activeNav.querySelector('span').classList.remove('font-medium');
-      activeNav.querySelector('span').classList.add('font-semibold');
-      activeNav.querySelector('svg').setAttribute('fill', 'currentColor');
-      activeNav.querySelector('svg').removeAttribute('stroke');
-    }
+      activeNav.classList.remove('text-gray'); activeNav.classList.add('text-[#FF5A1F]');
+      activeNav.querySelector('span').classList.remove('font-medium'); activeNav.querySelector('span').classList.add('font-semibold');
+      activeNav.querySelector('svg').setAttribute('fill', 'currentColor'); activeNav.querySelector('svg').removeAttribute('stroke');
 
-    // Load last page on refresh
+      // Header logic
+      document.getElementById('search-header').classList.add('hidden');
+      document.getElementById('cart-header').classList.add('hidden');
+      if(pageId === 'cart') {
+        document.getElementById('cart-header').classList.remove('hidden');
+      } else {
+        document.getElementById('search-header').classList.remove('hidden');
+      }
+    }
     document.addEventListener('DOMContentLoaded', function() {
       const lastPage = localStorage.getItem('activePage') || 'home';
       showPage(lastPage);
     });
   </script>
-
 </body>
 </html>
