@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; }
-   .text-gray { color: #6B7280; }
-   .page { display: none; }
-   .page.active { display: block; }
+  .text-gray { color: #6B7280; }
+  .page { display: none; }
+  .page.active { display: block; }
     /* Prevent slider jump */
-   .slider-container { aspect-ratio: 2 / 1; }
+  .slider-container { aspect-ratio: 2 / 1; }
   </style>
 </head>
 <body class="bg-white">
@@ -43,36 +43,36 @@
           
           <!-- Slides -->
           <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
-            <a href="/category/handbags" class="min-w-full h-full"><img src="/images/bana1.JPEG" class="w-full h-full object-cover" alt="Handbags & Wallets"></a>
-            <a href="/brand-festival" class="min-w-full h-full"><img src="/images/bana2.JPEG" class="w-full h-full object-cover" alt="Brand Festival"></a>
-            <a href="/category/computers" class="min-w-full h-full"><img src="/images/bana3.JPEG" class="w-full h-full object-cover" alt="Computers & Gaming"></a>
-            <a href="/category/fashion" class="min-w-full h-full"><img src="/images/bana4.JPEG" class="w-full h-full object-cover" alt="Fashion For Everyone"></a>
-            <a href="/category/beauty" class="min-w-full h-full"><img src="/images/bana5.JPEG" class="w-full h-full object-cover" alt="Beauty & Glam"></a>
-            <a href="/category/jewelry" class="min-w-full h-full"><img src="/images/bana6.JPEG" class="w-full h-full object-cover" alt="Jewelry Collection"></a>
-            <a href="/category/trendville-old" class="min-w-full h-full"><img src="/images/bana7.JPEG" class="w-full h-full object-cover" alt="TrendVille"></a>
-            <a href="/" class="min-w-full h-full"><img src="/images/bana8.JPEG" class="w-full h-full object-cover" alt="TrendVille Pro"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana1.JPEG" class="w-full h-full object-cover" alt="Handbags & Wallets"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana2.JPEG" class="w-full h-full object-cover" alt="Brand Festival"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana3.JPEG" class="w-full h-full object-cover" alt="Computers & Gaming"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana4.JPEG" class="w-full h-full object-cover" alt="Fashion For Everyone"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana5.JPEG" class="w-full h-full object-cover" alt="Beauty & Glam"></a>
+            <a href="#categories" class="min-w-full h-full"><img src="bana6.JPEG" class="w-full h-full object-cover" alt="Jewelry Collection"></a>
+            <a href="#home" class="min-w-full h-full"><img src="bana7.JPEG" class="w-full h-full object-cover" alt="TrendVille"></a>
+            <a href="#home" class="min-w-full h-full"><img src="bana8.JPEG" class="w-full h-full object-cover" alt="TrendVille Pro"></a>
           </div>
 
           <!-- Arrows -->
-          <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block">❮</button>
-          <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block">❯</button>
+          <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block z-10">❮</button>
+          <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block z-10">❯</button>
 
           <!-- Dots -->
-          <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+          <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
         </div>
       </div>
 
-      <!-- You can add Flash Sales, Categories here below the slider like Jumia -->
+      <!-- Content below slider -->
       <div class="px-4 py-6">
         <h2 class="text-lg font-bold mb-4">Welcome to TrendVille</h2>
       </div>
 
     </div>
 
-    <div id="categories" class="page min-h-[60vh] px-4 py-6">Categories Page</div>
-    <div id="cart" class="page min-h-[60vh] px-4 py-6">Cart Page</div>
-    <div id="wishlist" class="page min-h-[60vh] px-4 py-6">Wishlist Page</div>
-    <div id="account" class="page min-h-[60vh] px-4 py-6">Account Page</div>
+    <div id="categories" class="page min-h-[60vh] px-4 py-6"><h2 class="text-xl font-bold">Categories Page</h2></div>
+    <div id="cart" class="page min-h-[60vh] px-4 py-6"><h2 class="text-xl font-bold">Cart Page</h2></div>
+    <div id="wishlist" class="page min-h-[60vh] px-4 py-6"><h2 class="text-xl font-bold">Wishlist Page</h2></div>
+    <div id="account" class="page min-h-[60vh] px-4 py-6"><h2 class="text-xl font-bold">Account Page</h2></div>
   </main>
 
   <!-- BOTTOM NAV -->
