@@ -3,195 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOOSTHUB - Marketplace for Social + Music Growth</title>
+  <title>TRENDVILLE - Your City of Latest Trends</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; color: #1A1A1A; }
-    .text-gray { color: #6B7280; }
-    .bg-section { background-color: #F8F9FA; }
-    .btn-orange { background-color: #FF5A1F; }
-    .btn-orange:hover { background-color: #E54E18; }
+    body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; }
+   .text-gray { color: #6B7280; }
+   .bg-section { background-color: #F8F9FA; }
+   .btn-orange { background-color: #FF5A1F; }
+   .btn-orange:hover { background-color: #E54E18; }
   </style>
 </head>
-<body>
+<body class="bg-white">
 
-  <!-- NAVBAR -->
-  <nav class="flex items-center justify-between px-6 md:px-16 py-4 bg-white border-b border-[#E5E7EB] sticky top-0 z-50">
-    <div class="flex items-center gap-2">
-      <div class="w-9 h-9 btn-orange rounded-lg flex items-center justify-center text-white font-bold text-lg">B</div>
-      <span class="font-bold text-2xl">BOOSTHUB</span>
+  <!-- TOP BAR WITH SEARCH -->
+  <header class="sticky top-0 z-50 bg-white border-b border-[#E5E7EB] px-4 py-3">
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 btn-orange rounded-lg flex items-center justify-center text-white font-bold">T</div>
+        <span class="font-bold text-xl">TRENDVILLE</span>
+      </div>
     </div>
-    <div class="hidden lg:flex gap-8 text-sm font-medium">
-      <a href="#" class="hover:text-[#FF5A1F]">Services</a>
-      <a href="#" class="hover:text-[#FF5A1F]">Earn Tasks</a>
-      <a href="#" class="hover:text-[#FF5A1F]">Sign up</a>
-      <a href="#" class="hover:text-[#FF5A1F]">Blog</a>
-      <a href="#" class="hover:text-[#FF5A1F]">API</a>
+    <!-- SEARCH BAR -->
+    <div class="relative">
+      <svg class="absolute left-3 top-3 w-5 h-5 text-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      <input type="text" placeholder="Search on TrendVille" class="w-full pl-10 pr-4 py-2.5 bg-[#F8F9FA] rounded-lg text-sm border-[#E5E7EB] focus:outline-none">
     </div>
-    <div class="flex gap-3">
-      <button class="px-4 py-2 text-sm font-medium hidden md:block">Log In</button>
-      <button class="px-5 py-2.5 btn-orange text-white rounded-full text-sm font-semibold">Sign Up</button>
+  </header>
+
+  <!-- MIDDLE AREA - BLANK FOR NOW -->
+  <main class="min-h-[60vh] px-4 py-6">
+    <!-- We will add products, banners, categories here later -->
+  </main>
+
+  <!-- BOTTOM NAVIGATION - LIKE JUMIA -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E7EB] z-50">
+    <div class="flex justify-around items-center h-16">
+
+      <!-- Home -->
+      <a href="#" class="flex flex-col items-center text-[#FF5A1F]">
+        <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+        <span class="text-xs font-semibold">Home</span>
+      </a>
+
+      <!-- Categories -->
+      <a href="#" class="flex flex-col items-center text-gray">
+        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+        <span class="text-xs font-medium">Categories</span>
+      </a>
+
+      <!-- Cart -->
+      <a href="#" class="flex flex-col items-center text-gray relative">
+        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+        <span class="text-xs font-medium">Cart</span>
+      </a>
+
+      <!-- Wishlist -->
+      <a href="#" class="flex flex-col items-center text-gray">
+        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+        <span class="text-xs font-medium">Wishlist</span>
+      </a>
+
+      <!-- Account -->
+      <a href="#" class="flex flex-col items-center text-gray">
+        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        <span class="text-xs font-medium">Account</span>
+      </a>
+
     </div>
   </nav>
-
-  <!-- HERO - CHANGE 1: Phone makeup.JPG -->
-  <section class="text-center py-20 px-4">
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight">Grow your audience,<br>the smart way</h1>
-    <p class="text-gray text-base mt-5 max-w-2xl mx-auto">
-      Manage social + music growth, track orders, and earn money — all from one powerful marketplace.
-    </p>
-    <div class="mt-8 flex justify-center gap-4 flex-wrap">
-      <button class="px-7 py-3 btn-orange text-white rounded-full text-base font-semibold">Get Started</button>
-      <button class="px-7 py-3 bg-[#F8F9FA] rounded-full text-base font-semibold border border-[#E5E7EB]">View Available Services</button>
-    </div>
-    <!-- Hero Image -->
-    <div class="mt-14 flex justify-center">
-      <img src="Phone makeup.JPG" alt="Influencers" class="rounded-2xl shadow-2xl w-full max-w-3xl">
-    </div>
-  </section>
-
-  <!-- TRUSTED BY -->
-  <section class="py-12 text-center border-t border-[#E5E7EB]">
-    <p class="text-gray text-sm mb-6">Trusted by creators, brands, and earners worldwide</p>
-    <div class="flex justify-center gap-8 flex-wrap text-gray font-semibold">
-      <span>Instagram</span><span>Facebook</span><span>TikTok</span>
-      <span class="text-red-600">YouTube</span><span class="text-green-600">Spotify</span>
-      <span class="text-orange-500">Audiomack</span><span class="text-orange-600">SoundCloud</span>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="py-20 px-6 md:px-16 bg-section">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything you need to grow + earn</h2>
-    <p class="text-gray text-center mb-14">A complete marketplace for advertisers and earners</p>
-    
-    <div class="grid lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
-      <!-- For Advertisers -->
-      <div class="bg-white p-10 rounded-2xl border-[#E5E7EB]">
-        <h3 class="text-2xl font-bold mb-3">For Advertisers</h3>
-        <p class="text-gray mb-6">Boost your presence across all platforms. Real results, real fast.</p>
-        <img src="4 feature icons.JPG" class="rounded-xl mb-4 w-full">
-        <ul class="space-y-2 text-sm">
-          <li>✓ YouTube Views & Subscribers</li>
-          <li>✓ Spotify + Audiomack + SoundCloud Streams</li>
-          <li>✓ Instagram, TikTok Followers & Likes</li>
-        </ul>
-      </div>
-
-      <!-- For Earners -->
-      <div class="bg-white p-10 rounded-2xl border border-[#E5E7EB]">
-        <h3 class="text-2xl font-bold mb-3">For Earners</h3>
-        <p class="text-gray mb-6">Complete tasks and get paid. Withdraw anytime.</p>
-        <div class="bg-[#F8F9FA] p-6 rounded-xl mb-4">
-          <p class="text-sm text-gray">Your Balance</p>
-          <p class="text-3xl font-bold">₦50,000.00</p>
-          <div class="flex gap-3 mt-4">
-            <button class="px-4 py-2 btn-orange text-white rounded-lg text-sm font-semibold">Add Funds</button>
-            <button class="px-4 py-2 bg-white border border-[#E5E7EB] rounded-lg text-sm font-semibold">Withdraw</button>
-          </div>
-        </div>
-        <ul class="space-y-2 text-sm">
-          <li>✓ Follow accounts & get paid</li>
-          <li>✓ Stream songs & get paid</li>
-          <li>✓ Watch videos & get paid</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US - CHANGE 2: --> who its for.JPG
-  <section class="py-20 px-6 md:px-16">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-14">Why choose BOOSTHUB</h2>
-    <img src="who its for.JPG" alt="Why Choose BOOSTHUB" class="rounded-2xl shadow-lg w-full max-w-5xl mx-auto mb-10">
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-      <div>
-        <div class="w-12 h-12 bg-orange-100 rounded-xl mb-4"></div>
-        <h4 class="font-bold text-lg mb-2">Instant Delivery</h4>
-        <p class="text-gray text-sm">Orders and tasks start within minutes</p>
-      </div>
-      <div>
-        <div class="w-12 h-12 bg-orange-100 rounded-xl mb-4"></div>
-        <h4 class="font-bold text-lg mb-2">Secure Payments</h4>
-        <p class="text-gray text-sm">100% safe & encrypted transactions</p>
-      </div>
-      <div>
-        <div class="w-12 h-12 bg-orange-100 rounded-xl mb-4"></div>
-        <h4 class="font-bold text-lg mb-2">24/7 Support</h4>
-        <p class="text-gray text-sm">We dey here anytime you need help</p>
-      </div>
-      <div>
-        <div class="w-12 h-12 bg-orange-100 rounded-xl mb-4"></div>
-        <h4 class="font-bold text-lg mb-2">Affordable Prices</h4>
-        <p class="text-gray text-sm">Best rates on the market</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="py-20 px-6 md:px-16 bg-section">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-14">Who it's for</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-      <div class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-        <img src="Music picture.JPG" class="w-full h-48 object-cover">
-        <p class="p-4 font-semibold text-center">Musicians</p>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm">
-        <img src="Stream picture.JPG" class="w-full h-48 object-cover">
-        <p class="p-4 font-semibold text-center">Streamers</p>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden border-[#E5E7EB] shadow-sm">
-        <img src="Businesses.JPG" class="w-full h-48 object-cover">
-        <p class="p-4 font-semibold text-center">Businesses</p>
-      </div>
-      <div class="bg-white rounded-2xl overflow-hidden border-[#E5E7EB] shadow-sm">
-        <img src="Phone makeup.JPG" class="w-full h-48 object-cover">
-        <p class="p-4 font-semibold text-center">Influencers - YOU</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="py-20 text-center btn-orange text-white px-4">
-    <h2 class="text-3xl md:text-4xl font-bold">Ready to grow with BOOSTHUB?</h2>
-    <p class="mt-3 text-base">Create your account and start boosting or earning today.</p>
-    <button class="mt-6 px-8 py-3 bg-white text-[#FF5A1F] rounded-full text-base font-bold">Get Started for Free</button>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-16 px-6 md:px-16 bg-white border-t border-[#E5E7EB]">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-9 h-9 btn-orange rounded-lg flex items-center justify-center text-white font-bold">B</div>
-          <span class="font-bold text-xl">BOOSTHUB</span>
-        </div>
-        <p class="text-gray text-sm">Marketplace for across platform growth.</p>
-      </div>
-      <div>
-        <h5 class="font-semibold mb-3">Product</h5>
-        <ul class="text-gray text-sm space-y-2">
-          <li><a href="#">Services</a></li><li><a href="#">Earn Tasks</a></li><li><a href="#">API</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-semibold mb-3">Company</h5>
-        <ul class="text-gray text-sm space-y-2">
-          <li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-semibold mb-3">Legal</h5>
-        <ul class="text-gray text-sm space-y-2">
-          <li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-center text-gray text-sm mt-12">© 2026 BOOSTHUB. All rights reserved.</p>
-  </footer>
-
-  <!-- WHATSAPP -->
-  <a href="https://wa.me/234XXXXXXXXXX" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg text-white text-2xl">💬</a>
 
 </body>
 </html>
