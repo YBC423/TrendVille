@@ -1,462 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRENDVILLE - Your City of Latest Trends</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; background: #F8F9FA; }
-.text-gray { color: #6B7280; }
-.page { display: none; }
-.page.active { display: block; }
-.slider-container { aspect-ratio: 2 / 1; }
-.product-card { transition: box-shadow 0.2s; }
-.product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-[#E5E7EB] px-4 py-3">
-    <div id="search-header" class="relative max-w-[1200px] mx-auto">
-      <svg class="absolute left-3 top-3 w-5 h-5 text-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-      </svg>
-      <input type="text" placeholder="Search on TrendVille" class="w-full pl-10 pr-4 py-2.5 bg-[#F8F9FA] rounded-lg text-sm border-none focus:outline-none">
+<!-- PRODUCT 7 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product7.jpg" class="w-full h-full object-cover" alt="Ombre Brown Bob Human Hair Wig">
     </div>
-    <div id="cart-header" class="hidden max-w-[1200px] mx-auto">
-      <h1 class="text-xl font-bold">Cart</h1>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Ombre Brown Bob Human Hair Wig</p>
+      <p class="text-base font-bold mt-1">₦37,000</p>
     </div>
-  </header>
+  </a>
+</div>
 
-  <!-- PAGES -->
-  <main>
-    <!-- HOME PAGE -->
-    <div id="home" class="page active">
-
-      <!-- BANNER SLIDER -->
-      <div class="relative w-full max-w-[1200px] mx-auto bg-white">
-        <div class="relative w-full slider-container overflow-hidden">
-          <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
-            <a href="#categories" class="min-w-full h-full"><img src="bana1.JPEG" class="w-full h-full object-cover" alt="Handbags & Wallets"></a>
-            <a href="#categories" class="min-w-full h-full"><img src="bana2.JPEG" class="w-full h-full object-cover" alt="Brand Festival"></a>
-            <a href="#categories" class="min-w-full h-full"><img src="bana3.JPEG" class="w-full h-full object-cover" alt="Computers & Gaming"></a>
-            <a href="#categories" class="min-w-full h-full"><img src="bana4.JPEG" class="w-full h-full object-cover" alt="Fashion For Everyone"></a>
-            <a href="#categories" class="min-w-full h-full"><img src="bana5.JPEG" class="w-full h-full object-cover" alt="Beauty & Glam"></a>
-            <a href="#categories" class="min-w-full h-full"><img src="bana6.JPEG" class="w-full h-full object-cover" alt="Jewelry Collection"></a>
-            <a href="#home" class="min-w-full h-full"><img src="bana7.JPEG" class="w-full h-full object-cover" alt="TrendVille"></a>
-            <a href="#home" class="min-w-full h-full"><img src="bana8.JPEG" class="w-full h-full object-cover" alt="TrendVille Pro"></a>
-          </div>
-          <button id="prev" class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block z-10">❮</button>
-          <button id="next" class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full hidden md:block z-10">❯</button>
-          <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
-        </div>
-      </div>
-
-      <!-- PRODUCT GRID -->
-      <div class="max-w-[1200px] mx-auto px-2 md:px-4 py-4">
-        <div class="bg-white rounded-lg p-3 md:p-4">
-          <h2 class="text-lg font-bold mb-3">Top Deals For You</h2>
-
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
-
-            <!-- PRODUCT 1 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product1.jpg" class="w-full h-full object-cover" alt="American Vintage Baggy Distressed Jeans">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">American Vintage Baggy Distressed Jeans</p>
-                  <p class="text-base font-bold mt-1">₦23,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 2 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product2.jpg" class="w-full h-full object-cover" alt="Unisex KASH Baggy Sweatpants">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Unisex KASH Baggy Sweatpants</p>
-                  <p class="text-base font-bold mt-1">₦15,650</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 3 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product3.jpg" class="w-full h-full object-cover" alt="Oversized Graphic Streetwear T-Shirt">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Oversized Graphic Streetwear T-Shirt</p>
-                  <p class="text-base font-bold mt-1">₦9,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 4 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product4.jpg" class="w-full h-full object-cover" alt="Chunky Platform Sneakers">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Chunky Platform Sneakers</p>
-                  <p class="text-base font-bold mt-1">₦28,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 5 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product5.jpg" class="w-full h-full object-cover" alt="Luxury Crossbody Mini Bag">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Luxury Crossbody Mini Bag</p>
-                  <p class="text-base font-bold mt-1">₦12,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 6 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product6.jpg" class="w-full h-full object-cover" alt="Gold Cuban Link Chain Necklace">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Gold Cuban Link Chain Necklace</p>
-                  <p class="text-base font-bold mt-1">₦7,800</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 7 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product7.jpg" class="w-full h-full object-cover" alt="Aviator Sunglasses Metal Frame">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Aviator Sunglasses Metal Frame</p>
-                  <p class="text-base font-bold mt-1">₦4,200</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 8 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product8.jpg" class="w-full h-full object-cover" alt="Tribe Logo Wave Cap / Durag Hat">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Tribe Logo Wave Cap / Durag Hat</p>
-                  <p class="text-base font-bold mt-1">₦5,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 9 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product9.jpg" class="w-full h-full object-cover" alt="Luxury Rimless Lion Head Designer Glasses">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Luxury Rimless Lion Head Designer Glasses</p>
-                  <p class="text-base font-bold mt-1">₦5,550</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 10 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product10.jpg" class="w-full h-full object-cover" alt="Iced Out Hexagon Hip Hop Ring">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Iced Out Hexagon Hip Hop Ring</p>
-                  <p class="text-base font-bold mt-1">₦3,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 11 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product11.jpg" class="w-full h-full object-cover" alt="Classic Black Leather Biker Jacket">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Classic Black Leather Biker Jacket</p>
-                  <p class="text-base font-bold mt-1">₦8,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 12 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product12.jpg" class="w-full h-full object-cover" alt="Distressed Denim Patch & Chain Jorts">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Distressed Denim Patch & Chain Jorts</p>
-                  <p class="text-base font-bold mt-1">₦8,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 13 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product13.jpg" class="w-full h-full object-cover" alt="Stanley Style 40oz Tumbler w/ Handle + Flamingo Straw">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Stanley Style 40oz Tumbler w/ Handle + Flamingo Straw</p>
-                  <p class="text-base font-bold mt-1">₦4,600</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 14 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product14.jpg" class="w-full h-full object-cover" alt="Hello Kitty 900ml Insulated Tumbler w/ Handle + Straw">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Hello Kitty 900ml Insulated Tumbler w/ Handle + Straw</p>
-                  <p class="text-base font-bold mt-1">₦6,740</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 15 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product15.jpg" class="w-full h-full object-cover" alt="Designer 3-in-1 Swan Charm Handbag Set">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Designer 3-in-1 Swan Charm Handbag Set</p>
-                  <p class="text-base font-bold mt-1">₦10,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 16 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product16.jpg" class="w-full h-full object-cover" alt="Luxury Monogram Mini Bag with Fur Handle">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Luxury Monogram Mini Bag with Fur Handle</p>
-                  <p class="text-base font-bold mt-1">₦7,300</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 17 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product17.jpg" class="w-full h-full object-cover" alt="Men's Vintage Dragon Embroidery Baggy Jeans">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Men's Vintage Dragon Embroidery Baggy Jeans</p>
-                  <p class="text-base font-bold mt-1">₦25,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 18 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product18.jpg" class="w-full h-full object-cover" alt="Women's Y2K Script Print Baggy Sweatpants">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Women's Y2K Script Print Baggy Sweatpants</p>
-                  <p class="text-base font-bold mt-1">₦17,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 19 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product19.jpg" class="w-full h-full object-cover" alt="Luxury Rimless Rectangular Metal Glasses">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Luxury Rimless Rectangular Metal Glasses</p>
-                  <p class="text-base font-bold mt-1">₦6,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 20 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product20.jpg" class="w-full h-full object-cover" alt="48pcs French Tip Press-On Nails Set">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">48pcs French Tip Press-On Nails Set</p>
-                  <p class="text-base font-bold mt-1">₦3,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 21 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product21.jpg" class="w-full h-full object-cover" alt="Men's Y2K Graphic Varsity Baseball Jacket">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Men's Y2K Graphic Varsity Baseball Jacket</p>
-                  <p class="text-base font-bold mt-1">₦10,500</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 22 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product22.jpg" class="w-full h-full object-cover" alt="Men's Camouflage Jorts Baggy Denim Shorts">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Men's Camouflage Jorts Baggy Denim Shorts</p>
-                  <p class="text-base font-bold mt-1">₦7,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 23 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product23.jpg" class="w-full h-full object-cover" alt="Graphic Art Print Knit Beanie Hat">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Graphic Art Print Knit Beanie Hat</p>
-                  <p class="text-base font-bold mt-1">₦3,000</p>
-                </div>
-              </a>
-            </div>
-
-            <!-- PRODUCT 24 -->
-            <div class="product-card bg-white rounded-md overflow-hidden">
-              <a href="#">
-                <div class="aspect-square bg-gray-100">
-                  <img src="product24.jpg" class="w-full h-full object-cover" alt="Women's Pink Rhinestone Gem Beanie Hat">
-                </div>
-                <div class="p-2">
-                  <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Women's Pink Rhinestone Gem Beanie Hat</p>
-                  <p class="text-base font-bold mt-1">₦5,500</p>
-                </div>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+<!-- PRODUCT 8 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product8.jpg" class="w-full h-full object-cover" alt="Tribe Logo Wave Cap / Durag Hat">
     </div>
-
-    <!-- EMPTY PAGES -->
-    <div id="categories" class="page min-h-[60vh]"></div>
-    <div id="cart" class="page min-h-[60vh]"></div>
-    <div id="wishlist" class="page min-h-[60vh]"></div>
-    <div id="account" class="page min-h-[60vh]"></div>
-  </main>
-
-  <!-- BOTTOM NAV -->
-  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E7EB] z-50">
-    <div class="flex justify-around items-center h-16 max-w-[1200px] mx-auto">
-      <button onclick="showPage('home')" id="nav-home" class="flex flex-col items-center text-[#FF5A1F]"><svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg><span class="text-xs font-semibold">Home</span></button>
-      <button onclick="showPage('categories')" id="nav-categories" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg><span class="text-xs font-medium">Categories</span></button>
-      <button onclick="showPage('cart')" id="nav-cart" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg><span class="text-xs font-medium">Cart</span></button>
-      <button onclick="showPage('wishlist')" id="nav-wishlist" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg><span class="text-xs font-medium">Wishlist</span></button>
-      <button onclick="showPage('account')" id="nav-account" class="flex flex-col items-center text-gray"><svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span class="text-xs font-medium">Account</span></button>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Tribe Logo Wave Cap / Durag Hat</p>
+      <p class="text-base font-bold mt-1">₦5,000</p>
     </div>
-  </nav>
+  </a>
+</div>
 
-  <script>
-    function showPage(pageId) {
-      localStorage.setItem('activePage', pageId);
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      document.querySelectorAll('nav button').forEach(btn => {
-        btn.classList.remove('text-[#FF5A1F]'); btn.classList.add('text-gray');
-        btn.querySelector('span').classList.remove('font-semibold'); btn.querySelector('span').classList.add('font-medium');
-        btn.querySelector('svg').setAttribute('fill', 'none'); btn.querySelector('svg').setAttribute('stroke', 'currentColor');
-      });
-      const activeNav = document.getElementById('nav-' + pageId);
-      activeNav.classList.remove('text-gray'); activeNav.classList.add('text-[#FF5A1F]');
-      activeNav.querySelector('span').classList.remove('font-medium'); activeNav.querySelector('span').classList.add('font-semibold');
-      activeNav.querySelector('svg').setAttribute('fill', 'currentColor'); activeNav.querySelector('svg').removeAttribute('stroke');
-      document.getElementById('search-header').classList.add('hidden');
-      document.getElementById('cart-header').classList.add('hidden');
-      if(pageId === 'cart') {
-        document.getElementById('cart-header').classList.remove('hidden');
-      } else {
-        document.getElementById('search-header').classList.remove('hidden');
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      const lastPage = localStorage.getItem('activePage') || 'home';
-      showPage(lastPage);
-      initSlider();
-    });
-    function initSlider(){
-      const slider = document.getElementById('slider');
-      if(!slider) return;
-      const slides = slider.children.length;
-      const dotsContainer = document.getElementById('dots');
-      let index = 0;
-      let autoSlide;
-      for(let i=0; i<slides; i++){
-        const dot = document.createElement('button');
-        dot.className = 'w-2 h-2 rounded-full bg-white/60 transition-all';
-        dot.onclick = () => goToSlide(i);
-        dotsContainer.appendChild(dot);
-      }
-      const dots = dotsContainer.children;
-      function updateSlider(){
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        [...dots].forEach((d,i)=> d.className = `w-2 h-2 rounded-full transition-all ${i===index? 'bg-white w-5' : 'bg-white/60'}`);
-      }
-      function goToSlide(i){ index = i; updateSlider(); resetAutoSlide(); }
-      document.getElementById('next').onclick = () => { index = (index + 1) % slides; updateSlider(); resetAutoSlide(); }
-      document.getElementById('prev').onclick = () => { index = (index - 1 + slides) % slides; updateSlider(); resetAutoSlide(); }
-      function autoPlay(){ autoSlide = setInterval(()=>{ index = (index + 1) % slides; updateSlider(); }, 4000); }
-      function resetAutoSlide(){ clearInterval(autoSlide); autoPlay(); }
-      let startX = 0;
-      slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-      slider.addEventListener('touchend', e => {
-        if(e.changedTouches[0].clientX < startX - 50) document.getElementById('next').click();
-        if(e.changedTouches[0].clientX > startX + 50) document.getElementById('prev').click();
-      });
-      updateSlider();
-      autoPlay();
-    }
-  </script>
-</body>
-</html>
+<!-- PRODUCT 9 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product9.jpg" class="w-full h-full object-cover" alt="Luxury Rimless Lion Head Designer Glasses">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Luxury Rimless Lion Head Designer Glasses</p>
+      <p class="text-base font-bold mt-1">₦5,550</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 10 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product10.jpg" class="w-full h-full object-cover" alt="Iced Out Hexagon Hip Hop Ring">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Iced Out Hexagon Hip Hop Ring</p>
+      <p class="text-base font-bold mt-1">₦3,000</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 11 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product11.jpg" class="w-full h-full object-cover" alt="Classic Black Leather Biker Jacket">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Classic Black Leather Biker Jacket</p>
+      <p class="text-base font-bold mt-1">₦8,500</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 12 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product12.jpg" class="w-full h-full object-cover" alt="Distressed Denim Patch & Chain Jorts">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Distressed Denim Patch & Chain Jorts</p>
+      <p class="text-base font-bold mt-1">₦8,000</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 13 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product13.jpg" class="w-full h-full object-cover" alt="Stanley Style 40oz Tumbler w/ Handle + Flamingo Straw">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Stanley Style 40oz Tumbler w/ Handle + Flamingo Straw</p>
+      <p class="text-base font-bold mt-1">₦4,600</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 14 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product14.jpg" class="w-full h-full object-cover" alt="Hello Kitty 900ml Insulated Tumbler w/ Handle + Straw">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Hello Kitty 900ml Insulated Tumbler w/ Handle + Straw</p>
+      <p class="text-base font-bold mt-1">₦6,740</p>
+    </div>
+  </a>
+</div>
+
+<!-- PRODUCT 15 -->
+<div class="product-card bg-white rounded-md overflow-hidden">
+  <a href="#">
+    <div class="aspect-square bg-gray-100">
+      <img src="product15.jpg" class="w-full h-full object-cover" alt="Designer 3-in-1 Swan Charm Handbag Set">
+    </div>
+    <div class="p-2">
+      <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">Designer 3-in-1 Swan Charm Handbag Set</p>
+      <p class="text-base font-bold mt-1">₦10,000</p>
+    </div>
+  </a>
+</div>
