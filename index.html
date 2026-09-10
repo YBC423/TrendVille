@@ -8,26 +8,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; background: #F8F9FA; }
- .text-gray { color: #6B7280; }
- .page { display: none; }
- .page.active { display: block; }
- .slider-container { aspect-ratio: 2 / 1; }
- .product-card { transition: box-shadow 0.2s; position: relative; }
- .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
- .cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
- .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
- .modal.active { display: flex; }
+  .text-gray { color: #6B7280; }
+  .page { display: none; }
+  .page.active { display: block; }
+  .slider-container { aspect-ratio: 2 / 1; }
+  .product-card { transition: box-shadow 0.2s; position: relative; }
+  .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+  .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+  .modal.active { display: flex; }
   </style>
 </head>
 <body>
 
   <header id="main-header" class="sticky top-0 z-50 bg-white border-b border-[#E5E7EB] px-4 py-3">
     <div id="search-header" class="relative max-w-[1200px] mx-auto">
-      <svg class="absolute left-3 top-3 w-5 h-5 text-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      <svg class="absolute left-3 top-3 w-5 h-5 text-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
       <input type="text" placeholder="Search on TrendVille" class="w-full pl-10 pr-4 py-2.5 bg-[#F8F9FA] rounded-lg text-sm border-none focus:outline-none">
     </div>
-    <div id="cart-header" class="hidden max-w-[1200px] mx-auto"><h1 class="text-xl font-bold">Cart</h1></div>
-    <div id="checkout-header" class="hidden max-w-[1200px] mx-auto"><h1 class="text-xl font-bold">Order Summary</h1></div>
+    <div id="cart-header" class="hidden max-w-[1200px] mx-auto">
+      <h1 class="text-xl font-bold">Cart</h1>
+    </div>
+    <div id="checkout-header" class="hidden max-w-[1200px] mx-auto">
+      <h1 class="text-xl font-bold">Order Summary</h1>
+    </div>
   </header>
 
   <main>
@@ -53,7 +59,8 @@
       <div class="max-w-[1200px] mx-auto px-2 md:px-4 py-4">
         <div class="bg-white rounded-lg p-3 md:p-4">
           <h2 class="text-lg font-bold mb-3">Top Deals For You</h2>
-          <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2"></div>
+          <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+          </div>
         </div>
       </div>
     </div>
@@ -70,8 +77,8 @@
 
     <div id="checkout" class="page min-h-[60vh]">
       <div class="max-w-[1200px] mx-auto p-4">
-        <div id="order-summary" class="bg-white rounded-lg p-4 mb-4 space-y-3 min-h-[50px]"></div>
-        <div id="order-total" class="bg-white rounded-lg p-4 mb-4 font-bold text-xl text-right min-h-[30px]"></div>
+        <div id="order-summary" class="bg-white rounded-lg p-4 mb-4"></div>
+        <div id="order-total" class="bg-white rounded-lg p-4 mb-4 font-bold text-lg"></div>
         <a id="place-order-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-3 rounded-lg font-bold text-center">Place Order</a>
       </div>
     </div>
@@ -82,10 +89,20 @@
 
   <div id="product-modal" class="modal">
     <div class="bg-white rounded-2xl max-w-md w-full p-4">
-      <div class="flex justify-between items-center mb-3"><h3 id="modal-title" class="font-bold text-lg"></h3><button onclick="closeModal()" class="text-2xl">×</button></div>
+      <div class="flex justify-between items-center mb-3">
+        <h3 id="modal-title" class="font-bold text-lg"></h3>
+        <button onclick="closeModal()" class="text-2xl">×</button>
+      </div>
       <img id="modal-img" class="w-full aspect-square object-cover rounded-lg mb-3" src="" alt="">
       <p id="modal-price" class="font-bold text-xl mb-3"></p>
-      <div class="flex items-center justify-between mb-4"><span class="font-semibold">Quantity</span><div class="flex items-center gap-3"><button onclick="changeQty(-1)" class="w-8 h-8 border rounded-lg">-</button><span id="modal-qty" class="font-bold w-6 text-center">1</span><button onclick="changeQty(1)" class="w-8 h-8 border rounded-lg">+</button></div></div>
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-semibold">Quantity</span>
+        <div class="flex items-center gap-3">
+          <button onclick="changeQty(-1)" class="w-8 h-8 border rounded-lg">-</button>
+          <span id="modal-qty" class="font-bold w-6 text-center">1</span>
+          <button onclick="changeQty(1)" class="w-8 h-8 border rounded-lg">+</button>
+        </div>
+      </div>
       <button onclick="addToCartFromModal()" class="w-full bg-[#FF5A1F] text-white py-3 rounded-lg font-bold">Add to Cart</button>
     </div>
   </div>
@@ -128,14 +145,10 @@
       {id:24, name:"Women's Pink Rhinestone Gem Beanie Hat", price:5500, img:"product24.jpg"}
     ];
 
-    let cart = []; // Start empty, will load from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let modalProduct = null;
     let modalQty = 1;
-    const WHATSAPP_NUMBER = "ZG7GJKHDQZUTL1";
-
-    function loadCart() { // NEW: Force load every time
-        cart = JSON.parse(localStorage.getItem('cart')) || [];
-    }
+    const WHATSAPP_NUMBER = "ZG7GJKHDQZUTL1"; // Your WhatsApp link ID
 
     function saveCart() {
       localStorage.setItem('cart', JSON.stringify(cart));
@@ -143,11 +156,14 @@
     }
 
     function updateCartBadge() {
-      loadCart(); // Reload before counting
       const badge = document.getElementById('cart-badge');
       const count = cart.length;
-      if(count > 0) { badge.textContent = count; badge.classList.remove('hidden'); } 
-      else { badge.classList.add('hidden'); }
+      if(count > 0) {
+        badge.textContent = count;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
     }
 
     function renderProducts() {
@@ -155,11 +171,14 @@
       grid.innerHTML = products.map(p => `
         <div class="product-card bg-white rounded-md overflow-hidden">
           <div onclick="openModal(${p.id})" class="cursor-pointer">
-            <div class="aspect-square bg-gray-100"><img src="${p.img}" class="w-full h-full object-cover" alt="${p.name}"></div>
+            <div class="aspect-square bg-gray-100">
+              <img src="${p.img}" class="w-full h-full object-cover" alt="${p.name}">
+            </div>
             <div class="p-2">
               <p class="text-sm font-normal line-clamp-2 h-10 overflow-hidden">${p.name}</p>
               <div class="flex items-center justify-between mt-1">
                 <p class="text-base font-bold">₦${p.price.toLocaleString()}</p>
+                <!-- FIX 1: CART ICON INSTEAD OF + -->
                 <button onclick="event.stopPropagation(); quickAdd(${p.id})" class="bg-[#FF5A1F] text-white w-8 h-8 rounded-lg flex items-center justify-center">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </button>
@@ -171,7 +190,6 @@
     }
 
     function quickAdd(id) {
-      loadCart();
       const existing = cart.find(i => i.id === id);
       if(existing) existing.qty += 1;
       else cart.push({...products.find(p=>p.id===id), qty:1});
@@ -188,11 +206,16 @@
       document.getElementById('product-modal').classList.add('active');
     }
 
-    function closeModal() { document.getElementById('product-modal').classList.remove('active'); }
-    function changeQty(val) { modalQty = Math.max(1, modalQty + val); document.getElementById('modal-qty').textContent = modalQty; }
+    function closeModal() {
+      document.getElementById('product-modal').classList.remove('active');
+    }
+
+    function changeQty(val) {
+      modalQty = Math.max(1, modalQty + val);
+      document.getElementById('modal-qty').textContent = modalQty;
+    }
 
     function addToCartFromModal() {
-      loadCart();
       const existing = cart.find(i => i.id === modalProduct.id);
       if(existing) existing.qty += modalQty;
       else cart.push({...modalProduct, qty: modalQty});
@@ -201,12 +224,20 @@
     }
 
     function renderCart() {
-      loadCart();
       const container = document.getElementById('cart-items');
       const empty = document.getElementById('empty-cart');
       const checkoutBtn = document.getElementById('checkout-btn');
-      if(cart.length === 0) { container.innerHTML = ''; empty.classList.remove('hidden'); checkoutBtn.classList.add('hidden'); return; }
-      empty.classList.add('hidden'); checkoutBtn.classList.remove('hidden');
+
+      if(cart.length === 0) {
+        container.innerHTML = '';
+        empty.classList.remove('hidden');
+        checkoutBtn.classList.add('hidden');
+        return;
+      }
+
+      empty.classList.add('hidden');
+      checkoutBtn.classList.remove('hidden');
+
       container.innerHTML = cart.map(item => `
         <div class="bg-white rounded-lg p-3 flex gap-3">
           <img src="${item.img}" class="w-20 h-20 object-cover rounded">
@@ -224,7 +255,6 @@
     }
 
     function updateCartQty(id, val) {
-      loadCart();
       const item = cart.find(i=>i.id===id);
       item.qty += val;
       if(item.qty <= 0) cart = cart.filter(i=>i.id!==id);
@@ -233,43 +263,32 @@
     }
 
     function renderCheckout() {
-      loadCart(); // CRITICAL FIX: Reload cart here
       const summary = document.getElementById('order-summary');
       const totalEl = document.getElementById('order-total');
       const whatsappBtn = document.getElementById('place-order-btn');
       let total = 0;
 
+      // FIX 2: SHOW ORDER DETAILS + TOTAL
       if(cart.length === 0) {
-        summary.innerHTML = `<p class="text-gray text-center">Your cart is empty</p>`;
+        summary.innerHTML = `<p class="text-gray">No items in order</p>`;
         totalEl.innerHTML = ``;
         whatsappBtn.href = "#";
-        whatsappBtn.classList.add('opacity-50', 'pointer-events-none');
         return;
       }
-      
-      whatsappBtn.classList.remove('opacity-50', 'pointer-events-none');
 
       summary.innerHTML = cart.map(item => {
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-        return `
-          <div class="flex gap-3 border-b pb-3">
-            <img src="${item.img}" class="w-16 h-16 object-cover rounded">
-            <div class="flex-1">
-              <p class="font-semibold text-sm">${item.name}</p>
-              <p class="text-gray text-xs">Qty: ${item.qty} x ₦${item.price.toLocaleString()}</p>
-            </div>
-            <p class="font-bold">₦${subtotal.toLocaleString()}</p>
-          </div>
-        `;
+        total += item.price * item.qty;
+        return `<div class="flex justify-between py-2 border-b"><span class="text-sm">${item.name} x ${item.qty}</span><span class="font-semibold">₦${(item.price * item.qty).toLocaleString()}</span></div>`;
       }).join('');
       totalEl.innerHTML = `Total Amount: ₦${total.toLocaleString()}`;
 
+      // FIX 4: WHATSAPP MESSAGE WITH ALL DETAILS
       let message = `Hello TrendVille 👋%0A%0AI want to place an order:%0A%0A`;
       cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} x ${item.qty} = ₦${(item.price * item.qty).toLocaleString()}%0A`;
       });
       message += `%0ATotal: ₦${total.toLocaleString()}%0A%0APlease confirm and tell me delivery details.`;
+
       whatsappBtn.href = `https://wa.me/message/${WHATSAPP_NUMBER}?text=${message}`;
     }
 
@@ -296,14 +315,13 @@
         renderCart();
       } else if(pageId === 'checkout') {
         document.getElementById('checkout-header').classList.remove('hidden');
-        renderCheckout(); // This now calls loadCart() inside
+        renderCheckout();
       } else {
         document.getElementById('search-header').classList.remove('hidden');
       }
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      loadCart(); // Load once on start
       renderProducts();
       updateCartBadge();
       const lastPage = localStorage.getItem('activePage') || 'home';
@@ -345,4 +363,4 @@
     }
   </script>
 </body>
-</html> 
+</html>
