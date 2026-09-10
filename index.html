@@ -8,15 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; background: #F8F9FA; }
-.text-gray { color: #6B7280; }
-.page { display: none; }
-.page.active { display: block; }
-.slider-container { aspect-ratio: 2 / 1; }
-.product-card { transition: box-shadow 0.2s; position: relative; }
-.product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0.08); }
-.cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
-.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
-.modal.active { display: flex; }
+ .text-gray { color: #6B7280; }
+ .page { display: none; }
+ .page.active { display: block; }
+ .slider-container { aspect-ratio: 2 / 1; }
+ .product-card { transition: box-shadow 0.2s; position: relative; }
+ .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+ .cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+ .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+ .modal.active { display: flex; }
   </style>
 </head>
 <body>
@@ -148,7 +148,7 @@
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let modalProduct = null;
     let modalQty = 1;
-    const WHATSAPP_NUMBER = "ZG7GJKHDQZUTL1";
+    const WHATSAPP_NUMBER = "2348168909003"; // Your WhatsApp number
 
     function saveCart() {
       localStorage.setItem('cart', JSON.stringify(cart));
@@ -232,7 +232,7 @@
         message += `${index + 1}. ${item.name} x ${item.qty} = ₦${subtotal.toLocaleString()}%0A`;
       });
       message += `%0ATotal: ₦${total.toLocaleString()}%0A%0APlease confirm and tell me delivery details.`;
-      window.open(`https://wa.me/message/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
     }
 
     function renderCart() {
@@ -299,7 +299,7 @@
       });
       message += `%0ATotal: ₦${total.toLocaleString()}%0A%0APlease confirm and tell me delivery details.`;
 
-      whatsappBtn.href = `https://wa.me/message/${WHATSAPP_NUMBER}?text=${message}`;
+      whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
     }
 
     function showPage(pageId) {
