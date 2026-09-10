@@ -8,15 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; color: #1A1A1A; padding-bottom: 80px; background: #F8F9FA; }
- .text-gray { color: #6B7280; }
- .page { display: none; }
- .page.active { display: block; }
- .slider-container { aspect-ratio: 2 / 1; }
- .product-card { transition: box-shadow 0.2s; position: relative; }
- .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
- .cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
- .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
- .modal.active { display: flex; }
+.text-gray { color: #6B7280; }
+.page { display: none; }
+.page.active { display: block; }
+.slider-container { aspect-ratio: 2 / 1; }
+.product-card { transition: box-shadow 0.2s; position: relative; }
+.product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.cart-badge { position: absolute; top: -4px; right: -4px; background: #FF5A1F; color: white; font-size: 10px; font-weight: 700; border-radius: 9999px; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+.modal.active { display: flex; }
   </style>
 </head>
 <body>
@@ -64,10 +64,12 @@
 
     <div id="categories" class="page min-h-[60vh] p-4 text-center text-gray">Categories Coming Soon</div>
 
-    <div id="cart" class="page min-h-[60vh]">
-      <div class="max-w-[1200px] mx-auto p-4">
+    <div id="cart" class="page min-h-[60vh] flex-col">
+      <div class="max-w-[1200px] mx-auto p-4 flex-1 w-full">
         <div id="cart-items" class="space-y-3 mb-4"></div>
         <div id="empty-cart" class="text-center py-10 text-gray">Your cart is empty</div>
+      </div>
+      <div class="max-w-[1200px] mx-auto p-4 w-full">
         <a id="checkout-btn" href="#" target="_blank" class="hidden w-full bg-[#FF5A1F] text-white py-3 rounded-lg font-bold text-center">Checkout</a>
       </div>
     </div>
@@ -146,7 +148,7 @@
 
     function updateCartBadge() {
       const badge = document.getElementById('cart-badge');
-      const count = cart.length;
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
       if(count > 0) {
         badge.textContent = count;
         badge.classList.remove('hidden');
@@ -261,7 +263,7 @@
         </div>
       `).join('');
 
-      updateWhatsAppLink(); // Update link every time cart renders
+      updateWhatsAppLink();
     }
 
     function updateCartQty(id, val) {
